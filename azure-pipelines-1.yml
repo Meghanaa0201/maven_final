@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  name: Default   # Your self-hosted agent pool
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Print a greeting'
+
+- script: mvn clean install
+  displayName: 'Build with Maven'
+
+- script: java -jar target/SVITCSEMavenApp-1.0-SNAPSHOT.jar
+  displayName: 'Run the packaged jar'
