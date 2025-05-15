@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: mvn clean install
+  displayName: 'Build with Maven'
+
+- script: java -jar target/SVITCSEMavenApp-1.0-SNAPSHOT.jar
+  displayName: 'Running jar'
